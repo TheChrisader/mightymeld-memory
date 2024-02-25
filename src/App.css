@@ -1,0 +1,82 @@
+.introjs-helperLayer {
+  box-shadow: rgb(79 70 229 / 80%) 0px 0px 1px 2px,
+    rgba(33, 33, 33, 0.5) 0px 0px 0px 5000px !important;
+}
+
+.introjs-arrow {
+  transform: scale(3);
+}
+
+.introjs-arrow.bottom {
+  left: 15px;
+  bottom: -12px;
+}
+
+.introjs-arrow.left-bottom {
+  bottom: 13px;
+}
+
+.introjs-arrow.top {
+  top: -14px;
+  left: 18px;
+}
+
+.introjs-tooltip {
+  padding: 15px !important;
+  border-radius: 20px;
+  min-width: 250px;
+}
+
+@media (max-width: 480px) {
+  .introjs-tooltip {
+    min-width: 150px;
+  }
+}
+
+.introjs-tooltip-header,
+.introjs-tooltiptext {
+  padding: 0 !important;
+}
+
+.introjs-tooltip-header {
+  margin-bottom: 10px;
+  margin-top: -10px;
+}
+
+.introjs-tooltip-title {
+  font-size: 10px;
+}
+
+.introjs-tooltip-header > a {
+  margin-right: -12px;
+}
+
+.introjs-bullets {
+  padding-top: 0;
+}
+
+.introjs-tooltip li[role="presentation"] .active {
+  background-color: rgb(79 70 229);
+}
+
+.introjs-tooltipbuttons {
+  padding: 0;
+  padding-top: 10px;
+}
+
+.introjs-button {
+  background-color: rgb(79 70 229);
+  color: rgb(243 244 246);
+  border: none;
+  font-weight: 600;
+  text-shadow: none;
+  border-radius: 10px;
+}
+
+.introjs-button:focus,
+.introjs-button:hover,
+.introjs-button:active {
+  border: none;
+  color: rgb(243 244 246);
+  background-color: rgb(47, 39, 185);
+}
