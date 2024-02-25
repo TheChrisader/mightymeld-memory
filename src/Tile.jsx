@@ -111,5 +111,15 @@ function Front({ className, children }) {
 }
 
 function Matched({ className, children }) {
-  return <div className={className}>{children}</div>;
+  return (
+    <motion.div
+      variants={turnAnimation}
+      initial="initial"
+      animate="enter"
+      exit="exit"
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
 }
