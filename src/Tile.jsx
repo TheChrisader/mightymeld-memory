@@ -70,7 +70,7 @@ const turnAnimation = {
   enter: () => ({
     rotateY: 0,
     transition: {
-      duration: 0.2,
+      duration: 0.3,
       ease: [0.75, 0, 0.24, 1],
     },
   }),
