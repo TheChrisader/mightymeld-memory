@@ -157,16 +157,16 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
           <div className="text-gray-200/90 absolute bottom-[20px] right-5">
             <span>Share to Social Media:</span>
             <div className="flex w-full justify-between items-center px-2 text-2xl">
-              <a href="https://twitter.com/intent/tweet?url=http://localhost:5555&text=Hey!%20Check%20out%20this%20amazing%20site%20I%20found!">
+              <a href="https://twitter.com/intent/tweet?url=https://mighty-memory.netlify.app/&text=Hey!%20Check%20out%20this%20amazing%20site%20I%20found!">
                 <FaSquareXTwitter />
               </a>
-              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:5555">
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mighty-memory.netlify.app/">
                 <FaLinkedin />
               </a>
-              <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:5555">
+              <a href="https://www.facebook.com/sharer/sharer.php?u=https://mighty-memory.netlify.app/">
                 <FaFacebook />
               </a>
-              <a href="mailto:info@example.com?&subject=&cc=&bcc=&body=http://localhost:5555%0AHey!%20Check%20out%20this%20amazing%20site%20I%20found!">
+              <a href="mailto:info@example.com?&subject=&cc=&bcc=&body=https://mighty-memory.netlify.app/%0AHey!%20Check%20out%20this%20amazing%20site%20I%20found!">
                 <MdEmail />
               </a>
             </div>
