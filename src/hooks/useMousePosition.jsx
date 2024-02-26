@@ -7,7 +7,7 @@ const useMousePosition = (size) => {
   });
 
   const updatePosition = (event) => {
-    let { pageX, pageY, clientX, clientY } = event;
+    let { pageX, pageY, clientX, clientY } = event; //eslint-disable-line
 
     clientX = clientX - size / 2;
     clientY = clientY - size / 2;
@@ -26,7 +26,7 @@ const useMousePosition = (size) => {
       document.removeEventListener("mousemove", updatePosition);
       document.removeEventListener("mouseenter", updatePosition);
     };
-  }, []);
+  }, []); //eslint-disable-line
 
   return position;
 };
