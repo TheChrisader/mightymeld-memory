@@ -30,7 +30,7 @@ export function StartScreen({ start }) {
         </span>
         <button
           onClick={start}
-          className="bg-gray-400 text-white py-2 px-12 font-semibold text-lg rounded-full bg-gradient-to-b from-pink-400 to-pink-600 hover:from-pink-300 hover:to-pink-500 wave-fill"
+          className="bg-gray-400 text-white py-2 px-12 font-semibold text-lg rounded-full bg-gradient-to-b from-pink-400 to-pink-600 hover:from-pink-300 hover:to-pink-500 wave-fill animate-bounce"
         >
           Play
         </button>
