@@ -1,5 +1,9 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { SlClose } from "react-icons/sl";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaLinkedin } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 import { Curve } from "./curve";
 import { ChangeBackground } from "./changeBackground";
 import { CheckLeaderboard } from "./checkLeaderboard";
@@ -69,7 +73,7 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
           >
             <SlClose className="size-[50px] fill-gray-500" />
           </motion.button>
-          <div>
+          <div className="relative">
             <motion.div
               className="mt-[15vh] mb-10"
               variants={slideAnimation}
@@ -149,6 +153,23 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
                 </button>
               </motion.li>
             </ul>
+          </div>
+          <div className="text-gray-200/90 absolute bottom-[20px] right-5">
+            <span>Share to Social Media:</span>
+            <div className="flex w-full justify-between items-center px-2 text-2xl">
+              <a href="https://twitter.com/intent/tweet?url=http://localhost:5555&text=Hey!%20Check%20out%20this%20amazing%20site%20I%20found!">
+                <FaSquareXTwitter />
+              </a>
+              <a href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:5555">
+                <FaLinkedin />
+              </a>
+              <a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:5555">
+                <FaFacebook />
+              </a>
+              <a href="mailto:info@example.com?&subject=&cc=&bcc=&body=http://localhost:5555%0AHey!%20Check%20out%20this%20amazing%20site%20I%20found!">
+                <MdEmail />
+              </a>
+            </div>
           </div>
           <Curve />
         </motion.nav>
