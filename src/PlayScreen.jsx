@@ -134,6 +134,9 @@ export function PlayScreen({ end }) {
 
   const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
 
+  const tapAudio = new Audio("/assets/switch-3.mp3");
+  const winAudio = new Audio("/assets/game-win.mp3");
+
   const undoState = () => {
     if (movesStack.length === 0) return;
     let lastMoves = movesStack[movesStack.length - 1];
@@ -244,6 +247,8 @@ export function PlayScreen({ end }) {
   const flip = (origin, index) => {
     if (tiles[origin][index].state === "flipped") return;
 
+    tapAudio.play();
+
     const flippedTiles = [];
     tiles.forEach((tiles) => {
       let foundTile = tiles.find((tile) => tile.state === "flipped");
@@ -265,6 +270,7 @@ export function PlayScreen({ end }) {
       let newState = "start";
 
       if (alreadyFlippedTile.content === justFlippedTile.content) {
+        winAudio.play();
         confetti({
           ticks: 300,
           particleCount: 100,

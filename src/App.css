@@ -21,6 +21,11 @@
   left: 18px;
 }
 
+.introjs-arrow.right {
+  right: -12px;
+  top: 14px;
+}
+
 .introjs-tooltip {
   padding: 15px !important;
   border-radius: 20px;
@@ -36,6 +41,11 @@
 .introjs-tooltip-header,
 .introjs-tooltiptext {
   padding: 0 !important;
+}
+
+.introjs-tooltiptext {
+  color: rgb(75 85 99);
+  font-weight: 600;
 }
 
 .introjs-tooltip-header {

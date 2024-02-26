@@ -60,6 +60,8 @@ function App() {
   const [enabled, setEnabled] = useState(false);
   const [initialStep] = useState(0);
 
+  const menuAudio = new Audio("/assets/menu-select.mp3");
+
   useEffect(() => {
     if (!isLightTheme) {
       document.body.classList.add("dark");
@@ -75,6 +77,7 @@ function App() {
   }, []);
 
   const toggleSidebar = () => {
+    menuAudio.play();
     setOpenSidebar(!openSidebar);
   };
 
@@ -102,7 +105,7 @@ function App() {
           <Sidebar
             startTutorial={setEnabled}
             isVisible={openSidebar}
-            toggle={setOpenSidebar}
+            toggle={toggleSidebar}
           />
         </>
       )}

@@ -53,7 +53,7 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
         >
           <motion.button
             onClick={() => {
-              toggle(false);
+              toggle();
             }}
             className="absolute top-9 right-9 flex items-center justify-center size-[60px] bg-gray-100 rounded-full"
             variants={slideAnimation}
@@ -126,7 +126,7 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
                   className="text-white text-3xl nav-item"
                   onClick={() => {
                     startTutorial(true);
-                    toggle(false);
+                    toggle();
                   }}
                 >
                   Start Quick Guide
