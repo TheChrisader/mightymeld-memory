@@ -42,7 +42,7 @@ export const Loader = () => {
       <div className="bg-mainBg fixed top-0 left-0 w-screen h-screen z-[15]">
         <span
           style={{ transform: "translate(-50%, -50%)" }}
-          className="fixed font-bold text-darkGray text-center text-xl left-1/2 top-[60%] blink"
+          className="fixed font-bold text-darkGray text-center text-xl left-1/2 w-full px-1 bottom-[30vh] blink"
         >
           {hint}...
         </span>
