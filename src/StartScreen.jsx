@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useCursorHandlers } from "./hooks/useCursorHandlers";
 
 const startAnimation = {
   initial: {
@@ -16,6 +17,8 @@ const startAnimation = {
 };
 
 export function StartScreen({ start }) {
+  const [toggle, cursorHandlers] = useCursorHandlers({ returnToggle: true });
+
   return (
     <div className="relative z-10 w-full h-full flex items-center justify-center">
       <motion.div
@@ -29,7 +32,11 @@ export function StartScreen({ start }) {
           Flip over tiles looking for pairs
         </span>
         <button
-          onClick={start}
+          {...cursorHandlers}
+          onClick={() => {
+            toggle(false);
+            start();
+          }}
           className="bg-gray-400 text-white py-2 px-12 font-semibold text-lg rounded-full bg-gradient-to-b from-pink-400 to-pink-600 hover:from-pink-300 hover:to-pink-500 wave-fill animate-bounce"
         >
           Play

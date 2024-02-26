@@ -1,3 +1,7 @@
+body:hover #cursor {
+  opacity: 1;
+}
+
 .introjs-helperLayer {
   box-shadow: rgb(79 70 229 / 80%) 0px 0px 1px 2px,
     rgba(33, 33, 33, 0.5) 0px 0px 0px 5000px !important;

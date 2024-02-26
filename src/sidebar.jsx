@@ -4,6 +4,7 @@ import { Curve } from "./curve";
 import { ChangeBackground } from "./changeBackground";
 import { CheckLeaderboard } from "./checkLeaderboard";
 import { PickDifficulty } from "./pickDifficulty";
+import { useCursorHandlers } from "./hooks/useCursorHandlers";
 
 const menuSlideAnimation = {
   initial: {
@@ -40,6 +41,10 @@ const slideAnimation = {
 };
 
 export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
+  const [toggleCursor, cursorHandlers] = useCursorHandlers({
+    returnToggle: true,
+  });
+
   return (
     <AnimatePresence>
       {isVisible && (
@@ -84,7 +89,10 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
                 custom={4}
               >
                 <CheckLeaderboard>
-                  <button className="text-white text-3xl nav-item">
+                  <button
+                    {...cursorHandlers}
+                    className="text-white text-3xl nav-item"
+                  >
                     Check Leaderboard
                   </button>
                 </CheckLeaderboard>
@@ -97,7 +105,10 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
                 custom={6}
               >
                 <PickDifficulty>
-                  <button className="text-white text-3xl nav-item">
+                  <button
+                    {...cursorHandlers}
+                    className="text-white text-3xl nav-item"
+                  >
                     Change Difficulty
                   </button>
                 </PickDifficulty>
@@ -110,7 +121,10 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
                 custom={8}
               >
                 <ChangeBackground>
-                  <button className="text-white text-3xl nav-item">
+                  <button
+                    {...cursorHandlers}
+                    className="text-white text-3xl nav-item"
+                  >
                     Customize Application
                   </button>
                 </ChangeBackground>
@@ -123,10 +137,12 @@ export const Sidebar = ({ isVisible, toggle, startTutorial }) => {
                 custom={10}
               >
                 <button
+                  {...cursorHandlers}
                   className="text-white text-3xl nav-item"
                   onClick={() => {
                     startTutorial(true);
                     toggle();
+                    toggleCursor(false);
                   }}
                 >
                   Start Quick Guide

@@ -4,6 +4,7 @@ import { Magnetic } from "./Magnetic";
 
 import { useTaskBarStore } from "./store/taskBarStore";
 import { motion } from "framer-motion";
+import { useCursorHandlers } from "./hooks/useCursorHandlers";
 
 const tasksAnimation = {
   initial: {
@@ -25,6 +26,8 @@ export const TaskBar = ({ toggleSidebar }) => {
   const refreshBoard = useTaskBarStore((state) => state.refreshBoard);
   const undoStateFunction = useTaskBarStore((state) => state.undoStateFunction);
   const showHint = useTaskBarStore((state) => state.showHint);
+
+  const cursorHandlers = useCursorHandlers();
 
   const undo = () => {
     if (!undoStateFunction) {
@@ -52,6 +55,7 @@ export const TaskBar = ({ toggleSidebar }) => {
       <div className="relative py-2 px-8 rounded-lg flex gap-7 blur-after max-[500px]:gap-3 max-[411px]:px-2">
         <Magnetic>
           <button
+            {...cursorHandlers}
             id="refresh"
             className="p-3 size-[50px] -mt-[30px] bg-lightGray border border-lightMidGray rounded-full shadow-lg transition-colors hover:bg-deepIndigo hover:border-none focus:border-none [&_*]:hover:fill-gray-100 focus:bg-deepIndigo [&_*]:focus:fill-gray-100"
             onClick={refreshBoard}
@@ -61,6 +65,7 @@ export const TaskBar = ({ toggleSidebar }) => {
         </Magnetic>
         <Magnetic>
           <button
+            {...cursorHandlers}
             id="undo"
             className="p-3 size-[50px] -mt-[30px] bg-lightGray border border-lightMidGray rounded-full shadow-lg transition-colors hover:bg-deepIndigo hover:border-none focus:border-none [&_*]:hover:fill-gray-100 focus:bg-deepIndigo [&_*]:focus:fill-gray-100"
             onClick={undo}
@@ -70,6 +75,7 @@ export const TaskBar = ({ toggleSidebar }) => {
         </Magnetic>
         <Magnetic>
           <button
+            {...cursorHandlers}
             id="hint"
             className="p-3 size-[50px] -mt-[30px] bg-lightGray border border-lightMidGray rounded-full shadow-lg transition-colors hover:bg-deepIndigo hover:border-none focus:border-none [&_*]:hover:fill-gray-100 focus:bg-deepIndigo [&_*]:focus:fill-gray-100"
             onClick={hint}
@@ -82,6 +88,7 @@ export const TaskBar = ({ toggleSidebar }) => {
 
         <Magnetic>
           <button
+            {...cursorHandlers}
             id="menu"
             className="p-3 size-[50px] -mt-[30px] bg-lightGray border border-lightMidGray rounded-full shadow-lg transition-colors hover:bg-deepIndigo hover:border-none focus:border-none [&_*]:hover:fill-gray-100 focus:bg-deepIndigo [&_*]:focus:fill-gray-100"
             onClick={toggleSidebar}

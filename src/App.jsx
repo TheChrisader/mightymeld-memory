@@ -6,9 +6,12 @@ import { Sidebar } from "./sidebar";
 import { useThemeStore } from "./store/themeStore";
 import { Loader } from "./Loader";
 
+import CursorContextProvider from "./context/cursorContext";
+
 import { Steps } from "intro.js-react";
 import "intro.js/introjs.css";
 import "./App.css";
+import { Cursor } from "./cursor";
 
 const steps = [
   {
@@ -86,7 +89,8 @@ function App() {
   };
 
   return (
-    <>
+    <CursorContextProvider>
+      <Cursor />
       <Steps
         enabled={enabled}
         steps={steps}
@@ -109,7 +113,7 @@ function App() {
           />
         </>
       )}
-    </>
+    </CursorContextProvider>
   );
 }
 
