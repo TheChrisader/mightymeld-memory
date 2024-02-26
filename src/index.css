@@ -141,6 +141,20 @@
     -webkit-text-fill-color: var(--dark-gray);
     caret-color: var(--dark-gray);
   }
+
+  body::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: var(--deep-indigo);
+    border-radius: 20px;
+  }
+
+  body::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
 }
 
 @layer utilities {
